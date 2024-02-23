@@ -200,22 +200,39 @@ def main():
 
 if __name__ == '__main__':
 
-    # get config obj
-    config = ExpConfig()
+    dataset_files = ['machine-1-1.txt', 'machine-1-2.txt', 'machine-1-3.txt', 'machine-1-4.txt', 'machine-1-5.txt',
+                     'machine-1-6.txt', 'machine-1-7.txt', 'machine-1-8.txt', 'machine-2-1.txt', 'machine-2-2.txt',
+                     'machine-2-3.txt', 'machine-2-4.txt', 'machine-2-5.txt', 'machine-2-6.txt', 'machine-2-7.txt',
+                     'machine-2-8.txt', 'machine-2-9.txt', 'machine-3-1.txt', 'machine-3-2.txt', 'machine-3-3.txt',
+                     'machine-3-4.txt', 'machine-3-5.txt', 'machine-3-6.txt', 'machine-3-7.txt', 'machine-3-8.txt',
+                     'machine-3-9.txt', 'machine-3-10.txt', 'machine-3-11.txt']
+    
+    for file in dataset_files:
+        # get config obj
+        config = ExpConfig()
+        config.dataset = file.replace('.txt', '')
 
-    # parse the arguments
-    arg_parser = ArgumentParser()
-    register_config_arguments(config, arg_parser)
-    arg_parser.parse_args(sys.argv[1:])
-    config.x_dim = get_data_dim(config.dataset)
+        config_id = config.dataset.replace('-', '_')
+        config.save_dir = f'model_{config_id}'
+        config.result_dir = f'result_{config_id}'  # Where to save the result file
+        config.train_score_filename = f'train_score_{config_id}.pkl'
+        config.test_score_filename = f'test_score_{config_id}.pkl'
 
-    print_with_title('Configurations', pformat(config.to_dict()), after='\n')
+        # parse the arguments
+        arg_parser = ArgumentParser()
+        register_config_arguments(config, arg_parser)
+        arg_parser.parse_args(sys.argv[1:])
+        config.x_dim = get_data_dim(config.dataset)
 
-    # open the result object and prepare for result directories if specified
-    results = MLResults(config.result_dir)
-    results.save_config(config)  # save experiment settings for review
-    results.make_dirs(config.save_dir, exist_ok=True)
-    with warnings.catch_warnings():
-        # suppress DeprecationWarning from NumPy caused by codes in TensorFlow-Probability
-        warnings.filterwarnings("ignore", category=DeprecationWarning, module='numpy')
-        main()
+        print_with_title('Configurations', pformat(config.to_dict()), after='\n')
+
+        # open the result object and prepare for result directories if specified
+        results = MLResults(config.result_dir)
+        results.save_config(config)  # save experiment settings for review
+        results.make_dirs(config.save_dir, exist_ok=True)
+        with warnings.catch_warnings():
+            # suppress DeprecationWarning from NumPy caused by codes in TensorFlow-Probability
+            warnings.filterwarnings("ignore", category=DeprecationWarning, module='numpy')
+            # skip all warnings
+            warnings.filterwarnings("ignore")
+            main()
