@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from functools import partial
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import tfsnippet as spt
 from tensorflow.python.ops.linalg.linear_operator_identity import LinearOperatorIdentity
 from tensorflow_probability.python.distributions import LinearGaussianStateSpaceModel, MultivariateNormalDiag

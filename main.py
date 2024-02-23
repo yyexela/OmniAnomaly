@@ -9,7 +9,8 @@ from argparse import ArgumentParser
 from pprint import pformat, pprint
 
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from tfsnippet.examples.utils import MLResults, print_with_title
 from tfsnippet.scaffold import VariableSaver
 from tfsnippet.utils import get_variables_as_dict, register_config_arguments, Config

@@ -168,7 +168,7 @@ class BatchSlidingWindow(object):
         if excludes is not None:
             mask = np.logical_not(excludes)
         else:
-            mask = np.ones([array_size], dtype=np.bool)
+            mask = np.ones([array_size], dtype=bool)
         mask[: window_size - 1] = False
         where_excludes = np.where(excludes)[0]
         for k in range(1, window_size):

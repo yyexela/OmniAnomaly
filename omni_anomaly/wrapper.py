@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 import logging
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import tensorflow_probability as tfp
 from tfsnippet.distributions import Distribution
 
@@ -88,7 +89,7 @@ def rnn(x,
         dense_dim=200,
         time_axis=1,
         name='rnn'):
-    from tensorflow.contrib import rnn
+    from tensorflow.python.ops import rnn
     with tf.variable_scope(name, reuse=tf.AUTO_REUSE):
         if len(x.shape) == 4:
             x = tf.reduce_mean(x, axis=0)
