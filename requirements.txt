@@ -4,11 +4,12 @@ numpy
 pandas
 scipy
 scikit_learn
-tensorflow
+tensorflow[and-cuda]
 tensorflow_probability
 tqdm
 imageio
 fs
 click
-git+https://github.com/jin-jae/zhusuan-tf-compat.git
-git+https://github.com/jin-jae/tfsnippet-tf-compat.git
+tensorrt
+git+https://github.com/yyexela/tfsnippet-tf-compat.git
+git+https://github.com/yyexela/zhusuan-tf-compat.git
