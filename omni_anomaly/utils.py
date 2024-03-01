@@ -27,10 +27,12 @@ def save_z(z, filename='z'):
 
 
 def get_data_dim(dataset):
-    if dataset == 'SMAP':
+    if dataset in ['SMAP', 'SMAP2']:
         return 25
-    elif dataset == 'MSL':
+    elif dataset in ['MSL', 'MSL2']:
         return 55
+    elif dataset in ['SWaT2']:
+        return 51
     elif str(dataset).startswith('machine'):
         return 38
     else:
