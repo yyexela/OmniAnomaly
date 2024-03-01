@@ -33,7 +33,7 @@ def get_data_dim(dataset):
         return 55
     elif dataset in ['SWaT2']:
         return 51
-    elif str(dataset).startswith('machine'):
+    elif str(dataset).startswith('machine')or dataset in ['SMD2']:
         return 38
     else:
         raise ValueError('unknown dataset '+str(dataset))
