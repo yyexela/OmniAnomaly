@@ -27,14 +27,16 @@ def save_z(z, filename='z'):
 
 
 def get_data_dim(dataset):
-    if dataset in ['SMAP', 'mypkg_SMAP']:
+    if dataset in ["SMAP", 'mypkg_SMAP']:
         return 25
-    elif dataset in ['MSL', 'mypkg_MSL']:
+    elif dataset in ["MSL", 'mypkg_MSL']:
         return 55
+    elif str(dataset).startswith("machine") or dataset in ['mypkg_SMD']:
+        return 38
     elif dataset in ['mypkg_SWaT']:
         return 51
-    elif str(dataset).startswith('machine') or dataset in ['mypkg_SMD']:
-        return 38
+    elif dataset in ['mypkg_WADI']:
+        return 128
     else:
         raise ValueError('unknown dataset '+str(dataset))
 

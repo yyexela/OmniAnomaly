@@ -18,7 +18,7 @@ git clone https://github.com/yyexela/OmniAnomaly && cd OmniAnomaly
 # Build docker container with GPU support
 docker build -t omnianomaly .
 # Start docker container with GPU support
-docker run --gpus all -v./:/app/OmniAnomaly -it --rm omnianomaly bash
+docker run --gpus all -u $(id -u):$(id -g) -v./:/app/OmniAnomaly -it --rm omnianomaly bash
 ```
 
 #### Get data
