@@ -37,6 +37,8 @@ def get_data_dim(dataset):
         return 51
     elif dataset in ['mypkg_WADI']:
         return 128
+    elif dataset in ['mypkg_DSN_1k']:
+        return 129
     else:
         raise ValueError('unknown dataset '+str(dataset))
 
