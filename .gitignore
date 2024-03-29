@@ -2,6 +2,7 @@
 data
 model
 result
+*.sif
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template

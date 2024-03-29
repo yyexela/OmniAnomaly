@@ -1,0 +1,24 @@
+# Base image
+Bootstrap: docker
+From: tensorflow/tensorflow:1.15.0-gpu
+
+%post
+	# Resolves error with key
+	# See: https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
+	# See: https://askubuntu.com/questions/1444943/nvidia-gpg-error-the-following-signatures-couldnt-be-verified-because-the-publi
+	apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+
+	# Update image contents to have latest python3 and pip3 for image
+	apt-get update
+	apt-get install -y python3-pip python3-dev vim
+	cd /usr/local/bin
+	rm /usr/local/bin/python
+	ln -s /usr/bin/python3 python
+	pip3 install --upgrade pip
+	apt-get install -y git curl zip unzip
+	
+	# Install OmniAnomaly requirements 
+	pip3 install -r /app/requirements.txt
+
+%files
+	/mmfs1/home/alexeyy/storage/School/Research/submodules/OmniAnomaly/requirements.txt /app/requirements.txt
