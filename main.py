@@ -183,27 +183,17 @@ def main():
                         train_score = np.sum(train_score, axis=-1)
 
                     # get best f1
-                    t, th = bf_search(test_score, y_test[-len(test_score):],
+                    bf_eval = bf_search(test_score, y_test[-len(test_score):],
                                       start=config.bf_search_min,
                                       end=config.bf_search_max,
                                       step_num=int(abs(config.bf_search_max - config.bf_search_min) /
                                                    config.bf_search_step_size),
-                                      display_freq=50)
+                                      verbose=False)
                     # get pot results
                     pot_result = pot_eval(train_score, test_score, y_test[-len(test_score):], level=config.level)
 
                     # output the results
-                    best_valid_metrics.update({
-                        'best-f1': t[0],
-                        'precision': t[1],
-                        'recall': t[2],
-                        'TP': t[3],
-                        'TN': t[4],
-                        'FP': t[5],
-                        'FN': t[6],
-                        'latency': t[-1],
-                        'threshold': th
-                    })
+                    best_valid_metrics.update(bf_eval)
                     best_valid_metrics.update(pot_result)
                 results.update_metrics(best_valid_metrics)
 

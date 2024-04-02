@@ -335,6 +335,4 @@ class Trainer(VarScopeObject):
                 'train_time': np.mean(train_batch_time),
                 'valid_time': np.mean(valid_batch_time),
             }
-            print("Returning dictionary")
-            print(my_dict)
             return my_dict
