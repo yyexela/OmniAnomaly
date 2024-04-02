@@ -21,6 +21,13 @@ docker build -t omnianomaly .
 docker run --gpus all -u $(id -u):$(id -g) -v./:/app/OmniAnomaly -it --rm omnianomaly bash
 ```
 
+#### Helpful commands
+
+```bash
+# Faster training
+time python -u main.py --level=0.01 --dataset='mypkg_DSN_1k' --restore_dir='model' --max_epoch=0 --batch_size=1400 --test_batch_size=1400 2>&1 | tee run0.01.txt
+```
+
 #### Get data
 
 SMD (Server Machine Dataset) is in folder `ServerMachineDataset`. 
