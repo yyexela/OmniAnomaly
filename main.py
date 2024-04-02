@@ -38,6 +38,8 @@ class ExpConfig(Config):
     dense_dim = 500
     posterior_flow_type = 'nf'  # 'nf' or None
     nf_layers = 20  # for nf
+    cur_step = 0
+    cur_epoch = 0
     max_epoch = 10
     train_start = 0
     max_train_size = None  # `None` means full train set
@@ -54,6 +56,7 @@ class ExpConfig(Config):
     test_batch_size = 50
     test_start = 0
     max_test_size = None  # `None` means full test set
+    best_valid_metric = None
 
     # the range and step-size for score for searching best-f1
     # may vary for different dataset
@@ -84,7 +87,6 @@ class ExpConfig(Config):
     train_score_filename = 'train_score.pkl'
     test_score_filename = 'test_score.pkl'
 
-
 def main(): 
     logging.basicConfig(
         level='INFO',
@@ -102,6 +104,7 @@ def main():
 
         # construct the trainer
         trainer = Trainer(model=model,
+                          config=config,
                           model_vs=model_vs,
                           max_epoch=config.max_epoch,
                           batch_size=config.batch_size,
@@ -118,10 +121,26 @@ def main():
 
         with tf.compat.v1.Session().as_default():
 
-            if config.restore_dir is not None:
+            cur_epoch = 0
+            if config.restore_dir is not None and os.path.isdir(config.restore_dir):
                 # Restore variables from `save_dir`.
+                print(f"Loading {config.restore_dir}")
                 saver = VariableSaver(get_variables_as_dict(model_vs), config.restore_dir)
                 saver.restore()
+
+                # save training state state
+                with open(os.path.join(config.save_dir, "state.pkl"), 'rb') as file:
+                    state_dict = pickle.load(file)
+
+                config.cur_epoch = state_dict['epoch']
+                config.best_valid_metric = state_dict['best_valid_metric']
+                config.cur_step = state_dict['global_step']
+                print(f"Restoring variables! Epoch {config.cur_epoch}, step {config.cur_step}, best_valid_metric {config.best_valid_metric}")
+                trainer._cur_epoch = config.cur_epoch
+                trainer._cur_step = config.cur_step
+                trainer._best_valid_metric = config.best_valid_metric
+            else:
+                print(f"Not Restoring data!")
 
             if config.max_epoch > 0:
                 # train the model
