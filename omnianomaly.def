@@ -26,6 +26,6 @@ From: tensorflow/tensorflow:1.15.0-gpu
 %runscript
 	#!/bin/bash
 	echo "Running OmniAnomaly: \"time python main.py $*\""
-	cd /app/omnianomaly && time python -u main.py $@
+	cd /app/OmniAnomaly && time python -u main.py $@
 	exec echo "Finished Running OmniAnomaly"
 

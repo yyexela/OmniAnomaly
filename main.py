@@ -124,7 +124,7 @@ def main():
             cur_epoch = 0
             if config.restore_dir is not None and os.path.isdir(config.restore_dir):
                 # Restore variables from `save_dir`.
-                print(f"Loading {config.restore_dir}")
+                print(f"Loading \"{config.restore_dir}\"")
                 saver = VariableSaver(get_variables_as_dict(model_vs), config.restore_dir)
                 saver.restore()
 
