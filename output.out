@@ -1,0 +1,85 @@
+Running OmniAnomaly: "time python main.py --dataset=MSL --max_epoch=20"
+WARNING:tensorflow:From /app/omnianomaly/omni_anomaly/wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+2024-03-29 17:43:51,751 [WARNING] tensorflow: From /app/omnianomaly/omni_anomaly/wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /app/omnianomaly/omni_anomaly/wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+2024-03-29 17:43:51,758 [WARNING] tensorflow: From /app/omnianomaly/omni_anomaly/wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+2024-03-29 17:43:51,769 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-03-29 17:43:51,776 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-03-29 17:43:51,785 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /app/omnianomaly/omni_anomaly/wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2024-03-29 17:43:52,575 [WARNING] tensorflow: From /app/omnianomaly/omni_anomaly/wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2024-03-29 17:43:52,576 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2024-03-29 17:44:02,767 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2024-03-29 17:44:03.808686: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2024-03-29 17:44:05.012341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: Quadro RTX 6000 major: 7 minor: 5 memoryClockRate(GHz): 1.77
+pciBusID: 0000:1a:00.0
+2024-03-29 17:44:05.119733: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-03-29 17:44:05.260775: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2024-03-29 17:44:05.361898: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2024-03-29 17:44:05.514571: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2024-03-29 17:44:05.799570: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2024-03-29 17:44:06.051912: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2024-03-29 17:44:06.353029: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2024-03-29 17:44:06.354067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2024-03-29 17:44:06.355902: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2024-03-29 17:44:06.395845: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2100000000 Hz
+2024-03-29 17:44:06.396022: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x368da50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2024-03-29 17:44:06.396039: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2024-03-29 17:44:06.497324: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x28e84c0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-03-29 17:44:06.497364: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Quadro RTX 6000, Compute Capability 7.5
+2024-03-29 17:44:06.497954: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: Quadro RTX 6000 major: 7 minor: 5 memoryClockRate(GHz): 1.77
+pciBusID: 0000:1a:00.0
+2024-03-29 17:44:06.498017: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-03-29 17:44:06.498032: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2024-03-29 17:44:06.498045: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2024-03-29 17:44:06.498057: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2024-03-29 17:44:06.498069: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2024-03-29 17:44:06.498081: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2024-03-29 17:44:06.498094: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2024-03-29 17:44:06.498903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2024-03-29 17:44:06.500830: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-03-29 17:44:06.502040: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-03-29 17:44:06.502064: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2024-03-29 17:44:06.502072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2024-03-29 17:44:06.505054: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22844 MB memory) -> physical GPU (device: 0, name: Quadro RTX 6000, pci bus id: 0000:1a:00.0, compute capability: 7.5)
+2024-03-29 17:44:29.846108: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+slurmstepd: error: *** JOB 17444192 ON g3010 CANCELLED AT 2024-03-29T17:44:35 ***

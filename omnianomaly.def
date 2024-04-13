@@ -22,3 +22,10 @@ From: tensorflow/tensorflow:1.15.0-gpu
 
 %files
 	/mmfs1/home/alexeyy/storage/School/Research/submodules/OmniAnomaly/requirements.txt /app/requirements.txt
+
+%runscript
+	#!/bin/bash
+	echo "Running OmniAnomaly: \"time python main.py $*\""
+	cd /app/omnianomaly && time python -u main.py $@
+	exec echo "Finished Running OmniAnomaly"
+
