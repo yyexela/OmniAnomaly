@@ -1,0 +1,997 @@
+Configurations
+===========================================
+{'batch_size': 1400,
+ 'best_valid_metric': None,
+ 'bf_search_max': 400.0,
+ 'bf_search_min': -400.0,
+ 'bf_search_step_size': 1.0,
+ 'cur_epoch': 0,
+ 'cur_step': 0,
+ 'dataset': 'MSL',
+ 'dense_dim': 500,
+ 'early_stop': True,
+ 'get_score_on_dim': False,
+ 'gradient_clip_norm': 10.0,
+ 'initial_lr': 0.001,
+ 'l2_reg': 0.0001,
+ 'level': 0.01,
+ 'lr_anneal_epoch_freq': 40,
+ 'lr_anneal_factor': 0.5,
+ 'lr_anneal_step_freq': None,
+ 'max_epoch': 20,
+ 'max_test_size': None,
+ 'max_train_size': None,
+ 'nf_layers': 20,
+ 'posterior_flow_type': 'nf',
+ 'restore_dir': None,
+ 'result_dir': 'result',
+ 'rnn_cell': 'GRU',
+ 'rnn_num_hidden': 500,
+ 'save_dir': 'model',
+ 'save_z': False,
+ 'std_epsilon': 0.0001,
+ 'test_batch_size': 1400,
+ 'test_n_z': 1,
+ 'test_score_filename': 'test_score.pkl',
+ 'test_start': 0,
+ 'train_score_filename': 'train_score.pkl',
+ 'train_start': 0,
+ 'use_connected_z_p': True,
+ 'use_connected_z_q': True,
+ 'valid_step_freq': 100,
+ 'window_length': 100,
+ 'x_dim': 55,
+ 'z_dim': 3}
+
+load data of: MSL
+train:  0 None
+test:  0 None
+Data normalized
+Data normalized
+train set shape:  (58317, 55)
+test set shape:  (73729, 55)
+test set label shape:  (73729,)
+WARNING:tensorflow:From /app/OmniAnomaly/omni_anomaly/wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+2024-04-05 03:15:05,216 [WARNING] tensorflow: From /app/OmniAnomaly/omni_anomaly/wrapper.py:105: GRUCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.GRUCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /app/OmniAnomaly/omni_anomaly/wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+2024-04-05 03:15:05,217 [WARNING] tensorflow: From /app/OmniAnomaly/omni_anomaly/wrapper.py:114: static_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell, unroll=True)`, which is equivalent to this API
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+2024-04-05 03:15:05,225 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:559: Layer.add_variable (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.add_weight` method instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-04-05 03:15:05,231 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:565: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+2024-04-05 03:15:05,238 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/rnn_cell_impl.py:575: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:From /app/OmniAnomaly/omni_anomaly/wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+2024-04-05 03:15:05,949 [WARNING] tensorflow: From /app/OmniAnomaly/omni_anomaly/wrapper.py:119: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.Dense instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+2024-04-05 03:15:05,950 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/layers/core.py:187: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2024-04-05 03:15:14,451 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/ops/clip_ops.py:172: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2024-04-05 03:15:15.375098: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2024-04-05 03:15:15.383852: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: NVIDIA GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6575
+pciBusID: 0000:01:00.0
+2024-04-05 03:15:15.384075: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-04-05 03:15:15.385067: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2024-04-05 03:15:15.385948: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2024-04-05 03:15:15.386167: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2024-04-05 03:15:15.387317: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2024-04-05 03:15:15.388242: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2024-04-05 03:15:15.390808: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2024-04-05 03:15:15.391165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2024-04-05 03:15:15.391452: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2024-04-05 03:15:15.396578: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3599605000 Hz
+2024-04-05 03:15:15.397165: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x6013220 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2024-04-05 03:15:15.397177: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2024-04-05 03:15:15.503092: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5f23610 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-04-05 03:15:15.503110: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1080 Ti, Compute Capability 6.1
+2024-04-05 03:15:15.503335: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties: 
+name: NVIDIA GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.6575
+pciBusID: 0000:01:00.0
+2024-04-05 03:15:15.503378: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-04-05 03:15:15.503391: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2024-04-05 03:15:15.503409: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2024-04-05 03:15:15.503428: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2024-04-05 03:15:15.503445: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2024-04-05 03:15:15.503457: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2024-04-05 03:15:15.503469: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2024-04-05 03:15:15.504167: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2024-04-05 03:15:15.504292: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2024-04-05 03:15:15.505039: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-04-05 03:15:15.505053: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0 
+2024-04-05 03:15:15.505057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N 
+2024-04-05 03:15:15.505379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10299 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce GTX 1080 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1)
+Not Restoring data!
+values size is 58317
+n is 17495
+valid_portion is 0.3
+training window size is 40822
+valid window size is 17495
+valid batch size: 1400
+train batch size: 1400
+Trainable Parameters                                            (2,650,274 in total)
+------------------------------------------------------------------------------------
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/kernel             (555, 1000)  555,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/gates/bias               (1000,)        1,000
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/kernel         (555, 500)   277,500
+model/q_z_given_x/rnn_q_z/rnn/gru_cell/candidate/bias           (500,)           500
+model/q_z_given_x/rnn_q_z/dense/kernel                          (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense/bias                            (500,)           500
+model/q_z_given_x/rnn_q_z/dense_1/kernel                        (500, 500)   250,000
+model/q_z_given_x/rnn_q_z/dense_1/bias                          (500,)           500
+model/vae/variational/z_mean/kernel                             (503, 3)       1,509
+model/vae/variational/z_mean/bias                               (3,)               3
+model/vae/variational/z_std/kernel                              (503, 3)       1,509
+model/vae/variational/z_std/bias                                (3,)               3
+model/posterior_flow/_0/w                                       (1, 3)             3
+model/posterior_flow/_0/b                                       (1,)               1
+model/posterior_flow/_0/u                                       (1, 3)             3
+model/posterior_flow/_1/w                                       (1, 3)             3
+model/posterior_flow/_1/b                                       (1,)               1
+model/posterior_flow/_1/u                                       (1, 3)             3
+model/posterior_flow/_2/w                                       (1, 3)             3
+model/posterior_flow/_2/b                                       (1,)               1
+model/posterior_flow/_2/u                                       (1, 3)             3
+model/posterior_flow/_3/w                                       (1, 3)             3
+model/posterior_flow/_3/b                                       (1,)               1
+model/posterior_flow/_3/u                                       (1, 3)             3
+model/posterior_flow/_4/w                                       (1, 3)             3
+model/posterior_flow/_4/b                                       (1,)               1
+model/posterior_flow/_4/u                                       (1, 3)             3
+model/posterior_flow/_5/w                                       (1, 3)             3
+model/posterior_flow/_5/b                                       (1,)               1
+model/posterior_flow/_5/u                                       (1, 3)             3
+model/posterior_flow/_6/w                                       (1, 3)             3
+model/posterior_flow/_6/b                                       (1,)               1
+model/posterior_flow/_6/u                                       (1, 3)             3
+model/posterior_flow/_7/w                                       (1, 3)             3
+model/posterior_flow/_7/b                                       (1,)               1
+model/posterior_flow/_7/u                                       (1, 3)             3
+model/posterior_flow/_8/w                                       (1, 3)             3
+model/posterior_flow/_8/b                                       (1,)               1
+model/posterior_flow/_8/u                                       (1, 3)             3
+model/posterior_flow/_9/w                                       (1, 3)             3
+model/posterior_flow/_9/b                                       (1,)               1
+model/posterior_flow/_9/u                                       (1, 3)             3
+model/posterior_flow/_10/w                                      (1, 3)             3
+model/posterior_flow/_10/b                                      (1,)               1
+model/posterior_flow/_10/u                                      (1, 3)             3
+model/posterior_flow/_11/w                                      (1, 3)             3
+model/posterior_flow/_11/b                                      (1,)               1
+model/posterior_flow/_11/u                                      (1, 3)             3
+model/posterior_flow/_12/w                                      (1, 3)             3
+model/posterior_flow/_12/b                                      (1,)               1
+model/posterior_flow/_12/u                                      (1, 3)             3
+model/posterior_flow/_13/w                                      (1, 3)             3
+model/posterior_flow/_13/b                                      (1,)               1
+model/posterior_flow/_13/u                                      (1, 3)             3
+model/posterior_flow/_14/w                                      (1, 3)             3
+model/posterior_flow/_14/b                                      (1,)               1
+model/posterior_flow/_14/u                                      (1, 3)             3
+model/posterior_flow/_15/w                                      (1, 3)             3
+model/posterior_flow/_15/b                                      (1,)               1
+model/posterior_flow/_15/u                                      (1, 3)             3
+model/posterior_flow/_16/w                                      (1, 3)             3
+model/posterior_flow/_16/b                                      (1,)               1
+model/posterior_flow/_16/u                                      (1, 3)             3
+model/posterior_flow/_17/w                                      (1, 3)             3
+model/posterior_flow/_17/b                                      (1,)               1
+model/posterior_flow/_17/u                                      (1, 3)             3
+model/posterior_flow/_18/w                                      (1, 3)             3
+model/posterior_flow/_18/b                                      (1,)               1
+model/posterior_flow/_18/u                                      (1, 3)             3
+model/posterior_flow/_19/w                                      (1, 3)             3
+model/posterior_flow/_19/b                                      (1,)               1
+model/posterior_flow/_19/u                                      (1, 3)             3
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/kernel      (503, 1000)  503,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/gates/bias        (1000,)        1,000
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/kernel  (503, 500)   251,500
+model/p_x_given_z/hidden/rnn_p_x/rnn/gru_cell/candidate/bias    (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense/kernel                   (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense/bias                     (500,)           500
+model/p_x_given_z/hidden/rnn_p_x/dense_1/kernel                 (500, 500)   250,000
+model/p_x_given_z/hidden/rnn_p_x/dense_1/bias                   (500,)           500
+model/p_x_given_z/x_mean/kernel                                 (500, 55)     27,500
+model/p_x_given_z/x_mean/bias                                   (55,)             55
+model/p_x_given_z/x_std/kernel                                  (500, 55)     27,500
+model/p_x_given_z/x_std/bias                                    (55,)             55
+
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+2024-04-05 03:15:27.442452: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+epoch 1, step 1, batch 1400, 2.40 % (1400/58317), loss 35.333221435546875
+epoch 1, step 2, batch 1400, 4.80 % (2800/58317), loss 35.08327865600586
+epoch 1, step 3, batch 1400, 7.20 % (4200/58317), loss 32.44957733154297
+epoch 1, step 4, batch 1400, 9.60 % (5600/58317), loss 22.91584587097168
+epoch 1, step 5, batch 1400, 12.00 % (7000/58317), loss 56235.5078125
+epoch 1, step 6, batch 1400, 14.40 % (8400/58317), loss 30740900.0
+epoch 1, step 7, batch 1400, 16.80 % (9800/58317), loss 24030.62890625
+epoch 1, step 8, batch 1400, 19.21 % (11200/58317), loss 24.572845458984375
+epoch 1, step 9, batch 1400, 21.61 % (12600/58317), loss 25.585342407226562
+epoch 1, step 10, batch 1400, 24.01 % (14000/58317), loss 25.211994171142578
+epoch 1, step 11, batch 1400, 26.41 % (15400/58317), loss 20.107009887695312
+epoch 1, step 12, batch 1400, 28.81 % (16800/58317), loss 6.471900939941406
+epoch 1, step 13, batch 1400, 31.21 % (18200/58317), loss 25.729324340820312
+epoch 1, step 14, batch 1400, 33.61 % (19600/58317), loss 132.40423583984375
+epoch 1, step 15, batch 1400, 36.01 % (21000/58317), loss 16.465938568115234
+epoch 1, step 16, batch 1400, 38.41 % (22400/58317), loss -20.445755004882812
+epoch 1, step 17, batch 1400, 40.81 % (23800/58317), loss -23.0302677154541
+epoch 1, step 18, batch 1400, 43.21 % (25200/58317), loss -35.50062942504883
+epoch 1, step 19, batch 1400, 45.61 % (26600/58317), loss 11.748067855834961
+epoch 1, step 20, batch 1400, 48.01 % (28000/58317), loss 203.6387939453125
+epoch 1, step 21, batch 1400, 50.41 % (29400/58317), loss 84.97318267822266
+epoch 1, step 22, batch 1400, 52.81 % (30800/58317), loss -42.39833068847656
+epoch 1, step 23, batch 1400, 55.22 % (32200/58317), loss -36.08684158325195
+epoch 1, step 24, batch 1400, 57.62 % (33600/58317), loss -32.82053756713867
+epoch 1, step 25, batch 1400, 60.02 % (35000/58317), loss -44.816734313964844
+epoch 1, step 26, batch 1400, 62.42 % (36400/58317), loss -54.829322814941406
+epoch 1, step 27, batch 1400, 64.82 % (37800/58317), loss 94.04438781738281
+epoch 1, step 28, batch 1400, 67.22 % (39200/58317), loss 847.2723388671875
+epoch 1, step 29, batch 1400, 69.62 % (40600/58317), loss 335.894775390625
+Finished training in 22.624908924102783s
+Starting validation
+Validating
+Finished validation in 6.958697557449341s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 2, step 30, batch 1400, 2.40 % (1400/58317), loss 30.720239639282227
+epoch 2, step 31, batch 1400, 4.80 % (2800/58317), loss -54.161766052246094
+epoch 2, step 32, batch 1400, 7.20 % (4200/58317), loss -46.152645111083984
+epoch 2, step 33, batch 1400, 9.60 % (5600/58317), loss -39.83205795288086
+epoch 2, step 34, batch 1400, 12.00 % (7000/58317), loss -46.95785903930664
+epoch 2, step 35, batch 1400, 14.40 % (8400/58317), loss -61.2807731628418
+epoch 2, step 36, batch 1400, 16.80 % (9800/58317), loss -58.91605758666992
+epoch 2, step 37, batch 1400, 19.21 % (11200/58317), loss 51.88612365722656
+epoch 2, step 38, batch 1400, 21.61 % (12600/58317), loss 20.922040939331055
+epoch 2, step 39, batch 1400, 24.01 % (14000/58317), loss 239.99282836914062
+epoch 2, step 40, batch 1400, 26.41 % (15400/58317), loss -45.484222412109375
+epoch 2, step 41, batch 1400, 28.81 % (16800/58317), loss -55.64490509033203
+epoch 2, step 42, batch 1400, 31.21 % (18200/58317), loss -51.27339553833008
+epoch 2, step 43, batch 1400, 33.61 % (19600/58317), loss -57.0041389465332
+epoch 2, step 44, batch 1400, 36.01 % (21000/58317), loss -67.85244750976562
+epoch 2, step 45, batch 1400, 38.41 % (22400/58317), loss -73.8368148803711
+epoch 2, step 46, batch 1400, 40.81 % (23800/58317), loss -51.182029724121094
+epoch 2, step 47, batch 1400, 43.21 % (25200/58317), loss -8.558985710144043
+epoch 2, step 48, batch 1400, 45.61 % (26600/58317), loss -70.87828826904297
+epoch 2, step 49, batch 1400, 48.01 % (28000/58317), loss -74.61164093017578
+epoch 2, step 50, batch 1400, 50.41 % (29400/58317), loss -72.4621353149414
+epoch 2, step 51, batch 1400, 52.81 % (30800/58317), loss -78.04387664794922
+epoch 2, step 52, batch 1400, 55.22 % (32200/58317), loss -70.252197265625
+epoch 2, step 53, batch 1400, 57.62 % (33600/58317), loss -57.81673049926758
+epoch 2, step 54, batch 1400, 60.02 % (35000/58317), loss -79.94702911376953
+epoch 2, step 55, batch 1400, 62.42 % (36400/58317), loss -77.9484634399414
+epoch 2, step 56, batch 1400, 64.82 % (37800/58317), loss -81.47016143798828
+epoch 2, step 57, batch 1400, 67.22 % (39200/58317), loss -80.63374328613281
+epoch 2, step 58, batch 1400, 69.62 % (40600/58317), loss -79.776611328125
+Finished training in 13.423741579055786s
+Starting validation
+Validating
+Finished validation in 4.563889503479004s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 3, step 59, batch 1400, 2.40 % (1400/58317), loss -82.48148345947266
+epoch 3, step 60, batch 1400, 4.80 % (2800/58317), loss -90.46285247802734
+epoch 3, step 61, batch 1400, 7.20 % (4200/58317), loss -83.12345886230469
+epoch 3, step 62, batch 1400, 9.60 % (5600/58317), loss -90.29666900634766
+epoch 3, step 63, batch 1400, 12.00 % (7000/58317), loss -93.86751556396484
+epoch 3, step 64, batch 1400, 14.40 % (8400/58317), loss -91.93609619140625
+epoch 3, step 65, batch 1400, 16.80 % (9800/58317), loss -85.35682678222656
+epoch 3, step 66, batch 1400, 19.21 % (11200/58317), loss -95.05912017822266
+epoch 3, step 67, batch 1400, 21.61 % (12600/58317), loss -92.768310546875
+epoch 3, step 68, batch 1400, 24.01 % (14000/58317), loss -92.98784637451172
+epoch 3, step 69, batch 1400, 26.41 % (15400/58317), loss -100.94462585449219
+epoch 3, step 70, batch 1400, 28.81 % (16800/58317), loss -61.511199951171875
+epoch 3, step 71, batch 1400, 31.21 % (18200/58317), loss -87.4788589477539
+epoch 3, step 72, batch 1400, 33.61 % (19600/58317), loss -61.086727142333984
+epoch 3, step 73, batch 1400, 36.01 % (21000/58317), loss -101.46178436279297
+epoch 3, step 74, batch 1400, 38.41 % (22400/58317), loss -88.474853515625
+epoch 3, step 75, batch 1400, 40.81 % (23800/58317), loss -89.21170043945312
+epoch 3, step 76, batch 1400, 43.21 % (25200/58317), loss -92.36470031738281
+epoch 3, step 77, batch 1400, 45.61 % (26600/58317), loss -94.1948013305664
+epoch 3, step 78, batch 1400, 48.01 % (28000/58317), loss -102.3692398071289
+epoch 3, step 79, batch 1400, 50.41 % (29400/58317), loss -81.69195556640625
+epoch 3, step 80, batch 1400, 52.81 % (30800/58317), loss -30.7896785736084
+epoch 3, step 81, batch 1400, 55.22 % (32200/58317), loss -69.50591278076172
+epoch 3, step 82, batch 1400, 57.62 % (33600/58317), loss -92.65284729003906
+epoch 3, step 83, batch 1400, 60.02 % (35000/58317), loss -91.80604553222656
+epoch 3, step 84, batch 1400, 62.42 % (36400/58317), loss -94.63754272460938
+epoch 3, step 85, batch 1400, 64.82 % (37800/58317), loss -100.83749389648438
+epoch 3, step 86, batch 1400, 67.22 % (39200/58317), loss -93.5022964477539
+epoch 3, step 87, batch 1400, 69.62 % (40600/58317), loss 6.248195648193359
+Finished training in 13.430812120437622s
+Starting validation
+Validating
+Finished validation in 3.7027747631073s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 4, step 88, batch 1400, 2.40 % (1400/58317), loss -73.35125732421875
+epoch 4, step 89, batch 1400, 4.80 % (2800/58317), loss -49.082237243652344
+epoch 4, step 90, batch 1400, 7.20 % (4200/58317), loss -87.88436889648438
+epoch 4, step 91, batch 1400, 9.60 % (5600/58317), loss -86.98722839355469
+epoch 4, step 92, batch 1400, 12.00 % (7000/58317), loss -81.85600280761719
+epoch 4, step 93, batch 1400, 14.40 % (8400/58317), loss -87.12430572509766
+epoch 4, step 94, batch 1400, 16.80 % (9800/58317), loss -91.89374542236328
+epoch 4, step 95, batch 1400, 19.21 % (11200/58317), loss -96.9717025756836
+epoch 4, step 96, batch 1400, 21.61 % (12600/58317), loss -52.58881378173828
+epoch 4, step 97, batch 1400, 24.01 % (14000/58317), loss -89.42608642578125
+epoch 4, step 98, batch 1400, 26.41 % (15400/58317), loss -88.94548034667969
+epoch 4, step 99, batch 1400, 28.81 % (16800/58317), loss -97.54473876953125
+epoch 4, step 100, batch 1400, 31.21 % (18200/58317), loss -96.1098403930664
+epoch 4, step 101, batch 1400, 33.61 % (19600/58317), loss -99.70012664794922
+epoch 4, step 102, batch 1400, 36.01 % (21000/58317), loss -102.11278533935547
+epoch 4, step 103, batch 1400, 38.41 % (22400/58317), loss -104.26558685302734
+epoch 4, step 104, batch 1400, 40.81 % (23800/58317), loss -91.18919372558594
+epoch 4, step 105, batch 1400, 43.21 % (25200/58317), loss -104.53604125976562
+epoch 4, step 106, batch 1400, 45.61 % (26600/58317), loss -106.1090087890625
+epoch 4, step 107, batch 1400, 48.01 % (28000/58317), loss -103.89947509765625
+epoch 4, step 108, batch 1400, 50.41 % (29400/58317), loss -106.18717193603516
+epoch 4, step 109, batch 1400, 52.81 % (30800/58317), loss -112.57428741455078
+epoch 4, step 110, batch 1400, 55.22 % (32200/58317), loss -107.49491119384766
+epoch 4, step 111, batch 1400, 57.62 % (33600/58317), loss -110.17125701904297
+epoch 4, step 112, batch 1400, 60.02 % (35000/58317), loss -97.49232482910156
+epoch 4, step 113, batch 1400, 62.42 % (36400/58317), loss -112.45329284667969
+epoch 4, step 114, batch 1400, 64.82 % (37800/58317), loss -104.72154235839844
+epoch 4, step 115, batch 1400, 67.22 % (39200/58317), loss -104.49407958984375
+epoch 4, step 116, batch 1400, 69.62 % (40600/58317), loss -110.44294738769531
+Finished training in 13.496905088424683s
+Starting validation
+Validating
+WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2024-04-05 03:16:46,602 [WARNING] tensorflow: From /usr/local/lib/python3.6/dist-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+Finished validation in 4.634615659713745s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 5, step 117, batch 1400, 2.40 % (1400/58317), loss -111.74478912353516
+epoch 5, step 118, batch 1400, 4.80 % (2800/58317), loss -98.39320373535156
+epoch 5, step 119, batch 1400, 7.20 % (4200/58317), loss -114.79618835449219
+epoch 5, step 120, batch 1400, 9.60 % (5600/58317), loss -98.29647827148438
+epoch 5, step 121, batch 1400, 12.00 % (7000/58317), loss -113.51322937011719
+epoch 5, step 122, batch 1400, 14.40 % (8400/58317), loss -102.70973205566406
+epoch 5, step 123, batch 1400, 16.80 % (9800/58317), loss -109.52841186523438
+epoch 5, step 124, batch 1400, 19.21 % (11200/58317), loss -101.82782745361328
+epoch 5, step 125, batch 1400, 21.61 % (12600/58317), loss -106.49299621582031
+epoch 5, step 126, batch 1400, 24.01 % (14000/58317), loss -101.85675811767578
+epoch 5, step 127, batch 1400, 26.41 % (15400/58317), loss -107.19261169433594
+epoch 5, step 128, batch 1400, 28.81 % (16800/58317), loss -106.88985443115234
+epoch 5, step 129, batch 1400, 31.21 % (18200/58317), loss -107.57158660888672
+epoch 5, step 130, batch 1400, 33.61 % (19600/58317), loss -110.9735336303711
+epoch 5, step 131, batch 1400, 36.01 % (21000/58317), loss -108.41265869140625
+epoch 5, step 132, batch 1400, 38.41 % (22400/58317), loss -106.89974975585938
+epoch 5, step 133, batch 1400, 40.81 % (23800/58317), loss -113.05801391601562
+epoch 5, step 134, batch 1400, 43.21 % (25200/58317), loss -116.83894348144531
+epoch 5, step 135, batch 1400, 45.61 % (26600/58317), loss -115.58335876464844
+epoch 5, step 136, batch 1400, 48.01 % (28000/58317), loss -111.43572998046875
+epoch 5, step 137, batch 1400, 50.41 % (29400/58317), loss -110.97920989990234
+epoch 5, step 138, batch 1400, 52.81 % (30800/58317), loss -89.6258773803711
+epoch 5, step 139, batch 1400, 55.22 % (32200/58317), loss -117.98482513427734
+epoch 5, step 140, batch 1400, 57.62 % (33600/58317), loss -82.43238830566406
+epoch 5, step 141, batch 1400, 60.02 % (35000/58317), loss -92.61983489990234
+epoch 5, step 142, batch 1400, 62.42 % (36400/58317), loss -106.56321716308594
+epoch 5, step 143, batch 1400, 64.82 % (37800/58317), loss -102.38013458251953
+epoch 5, step 144, batch 1400, 67.22 % (39200/58317), loss -103.62735748291016
+epoch 5, step 145, batch 1400, 69.62 % (40600/58317), loss -111.94696044921875
+Finished training in 13.469389200210571s
+Starting validation
+Validating
+Finished validation in 4.650127172470093s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 6, step 146, batch 1400, 2.40 % (1400/58317), loss -117.51502990722656
+epoch 6, step 147, batch 1400, 4.80 % (2800/58317), loss -89.49287414550781
+epoch 6, step 148, batch 1400, 7.20 % (4200/58317), loss -103.45872497558594
+epoch 6, step 149, batch 1400, 9.60 % (5600/58317), loss -115.52581787109375
+epoch 6, step 150, batch 1400, 12.00 % (7000/58317), loss -115.48381042480469
+epoch 6, step 151, batch 1400, 14.40 % (8400/58317), loss -114.90230560302734
+epoch 6, step 152, batch 1400, 16.80 % (9800/58317), loss -114.29405975341797
+epoch 6, step 153, batch 1400, 19.21 % (11200/58317), loss -113.63800811767578
+epoch 6, step 154, batch 1400, 21.61 % (12600/58317), loss -121.35816955566406
+epoch 6, step 155, batch 1400, 24.01 % (14000/58317), loss -115.11172485351562
+epoch 6, step 156, batch 1400, 26.41 % (15400/58317), loss -125.73114013671875
+epoch 6, step 157, batch 1400, 28.81 % (16800/58317), loss -92.76823425292969
+epoch 6, step 158, batch 1400, 31.21 % (18200/58317), loss -101.6587142944336
+epoch 6, step 159, batch 1400, 33.61 % (19600/58317), loss -118.17996978759766
+epoch 6, step 160, batch 1400, 36.01 % (21000/58317), loss -116.17565155029297
+epoch 6, step 161, batch 1400, 38.41 % (22400/58317), loss -116.83544158935547
+epoch 6, step 162, batch 1400, 40.81 % (23800/58317), loss -116.76775360107422
+epoch 6, step 163, batch 1400, 43.21 % (25200/58317), loss -121.16885375976562
+epoch 6, step 164, batch 1400, 45.61 % (26600/58317), loss -120.42723083496094
+epoch 6, step 165, batch 1400, 48.01 % (28000/58317), loss -116.92389678955078
+epoch 6, step 166, batch 1400, 50.41 % (29400/58317), loss -96.0486831665039
+epoch 6, step 167, batch 1400, 52.81 % (30800/58317), loss -124.05105590820312
+epoch 6, step 168, batch 1400, 55.22 % (32200/58317), loss -104.73078918457031
+epoch 6, step 169, batch 1400, 57.62 % (33600/58317), loss -114.15843200683594
+epoch 6, step 170, batch 1400, 60.02 % (35000/58317), loss -116.66634368896484
+epoch 6, step 171, batch 1400, 62.42 % (36400/58317), loss -115.73403930664062
+epoch 6, step 172, batch 1400, 64.82 % (37800/58317), loss -116.27040100097656
+epoch 6, step 173, batch 1400, 67.22 % (39200/58317), loss -121.67916870117188
+epoch 6, step 174, batch 1400, 69.62 % (40600/58317), loss -116.82704162597656
+Finished training in 13.51992654800415s
+Starting validation
+Validating
+Finished validation in 3.670767068862915s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 7, step 175, batch 1400, 2.40 % (1400/58317), loss -114.57026672363281
+epoch 7, step 176, batch 1400, 4.80 % (2800/58317), loss -112.11788940429688
+epoch 7, step 177, batch 1400, 7.20 % (4200/58317), loss -121.8565444946289
+epoch 7, step 178, batch 1400, 9.60 % (5600/58317), loss -119.36691284179688
+epoch 7, step 179, batch 1400, 12.00 % (7000/58317), loss -120.67064666748047
+epoch 7, step 180, batch 1400, 14.40 % (8400/58317), loss -126.01395416259766
+epoch 7, step 181, batch 1400, 16.80 % (9800/58317), loss -122.7171401977539
+epoch 7, step 182, batch 1400, 19.21 % (11200/58317), loss -114.83204650878906
+epoch 7, step 183, batch 1400, 21.61 % (12600/58317), loss -121.94380187988281
+epoch 7, step 184, batch 1400, 24.01 % (14000/58317), loss -128.3592529296875
+epoch 7, step 185, batch 1400, 26.41 % (15400/58317), loss -126.21913146972656
+epoch 7, step 186, batch 1400, 28.81 % (16800/58317), loss -113.99109649658203
+epoch 7, step 187, batch 1400, 31.21 % (18200/58317), loss -114.4274673461914
+epoch 7, step 188, batch 1400, 33.61 % (19600/58317), loss -130.10128784179688
+epoch 7, step 189, batch 1400, 36.01 % (21000/58317), loss -128.05763244628906
+epoch 7, step 190, batch 1400, 38.41 % (22400/58317), loss -128.24180603027344
+epoch 7, step 191, batch 1400, 40.81 % (23800/58317), loss -130.21180725097656
+epoch 7, step 192, batch 1400, 43.21 % (25200/58317), loss -121.81372833251953
+epoch 7, step 193, batch 1400, 45.61 % (26600/58317), loss -128.8144073486328
+epoch 7, step 194, batch 1400, 48.01 % (28000/58317), loss -118.93083953857422
+epoch 7, step 195, batch 1400, 50.41 % (29400/58317), loss -133.9315948486328
+epoch 7, step 196, batch 1400, 52.81 % (30800/58317), loss -114.62299346923828
+epoch 7, step 197, batch 1400, 55.22 % (32200/58317), loss -121.4610824584961
+epoch 7, step 198, batch 1400, 57.62 % (33600/58317), loss -124.333984375
+epoch 7, step 199, batch 1400, 60.02 % (35000/58317), loss -122.3070297241211
+epoch 7, step 200, batch 1400, 62.42 % (36400/58317), loss -127.8397445678711
+epoch 7, step 201, batch 1400, 64.82 % (37800/58317), loss -125.18563079833984
+epoch 7, step 202, batch 1400, 67.22 % (39200/58317), loss -126.915283203125
+epoch 7, step 203, batch 1400, 69.62 % (40600/58317), loss -133.41400146484375
+Finished training in 13.559039115905762s
+Starting validation
+Validating
+Finished validation in 4.664881706237793s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 8, step 204, batch 1400, 2.40 % (1400/58317), loss -125.85748291015625
+epoch 8, step 205, batch 1400, 4.80 % (2800/58317), loss -133.8388214111328
+epoch 8, step 206, batch 1400, 7.20 % (4200/58317), loss -122.904541015625
+epoch 8, step 207, batch 1400, 9.60 % (5600/58317), loss -117.23418426513672
+epoch 8, step 208, batch 1400, 12.00 % (7000/58317), loss -128.70143127441406
+epoch 8, step 209, batch 1400, 14.40 % (8400/58317), loss -131.12562561035156
+epoch 8, step 210, batch 1400, 16.80 % (9800/58317), loss -128.01942443847656
+epoch 8, step 211, batch 1400, 19.21 % (11200/58317), loss -132.3087921142578
+epoch 8, step 212, batch 1400, 21.61 % (12600/58317), loss -131.07662963867188
+epoch 8, step 213, batch 1400, 24.01 % (14000/58317), loss -134.11964416503906
+epoch 8, step 214, batch 1400, 26.41 % (15400/58317), loss -128.0601806640625
+epoch 8, step 215, batch 1400, 28.81 % (16800/58317), loss -136.78578186035156
+epoch 8, step 216, batch 1400, 31.21 % (18200/58317), loss -126.36396789550781
+epoch 8, step 217, batch 1400, 33.61 % (19600/58317), loss -133.9427032470703
+epoch 8, step 218, batch 1400, 36.01 % (21000/58317), loss -129.8986053466797
+epoch 8, step 219, batch 1400, 38.41 % (22400/58317), loss -134.8485107421875
+epoch 8, step 220, batch 1400, 40.81 % (23800/58317), loss -130.11163330078125
+epoch 8, step 221, batch 1400, 43.21 % (25200/58317), loss -120.83540344238281
+epoch 8, step 222, batch 1400, 45.61 % (26600/58317), loss -135.13131713867188
+epoch 8, step 223, batch 1400, 48.01 % (28000/58317), loss -129.51116943359375
+epoch 8, step 224, batch 1400, 50.41 % (29400/58317), loss -129.29434204101562
+epoch 8, step 225, batch 1400, 52.81 % (30800/58317), loss -131.34510803222656
+epoch 8, step 226, batch 1400, 55.22 % (32200/58317), loss -139.30299377441406
+epoch 8, step 227, batch 1400, 57.62 % (33600/58317), loss -129.0803680419922
+epoch 8, step 228, batch 1400, 60.02 % (35000/58317), loss -137.87205505371094
+epoch 8, step 229, batch 1400, 62.42 % (36400/58317), loss -116.40335083007812
+epoch 8, step 230, batch 1400, 64.82 % (37800/58317), loss -130.5787353515625
+epoch 8, step 231, batch 1400, 67.22 % (39200/58317), loss -127.89376831054688
+epoch 8, step 232, batch 1400, 69.62 % (40600/58317), loss -125.09020233154297
+Finished training in 13.412826538085938s
+Starting validation
+Validating
+Finished validation in 4.774236679077148s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 9, step 233, batch 1400, 2.40 % (1400/58317), loss -133.83682250976562
+epoch 9, step 234, batch 1400, 4.80 % (2800/58317), loss -128.4519805908203
+epoch 9, step 235, batch 1400, 7.20 % (4200/58317), loss -131.68312072753906
+epoch 9, step 236, batch 1400, 9.60 % (5600/58317), loss -130.74563598632812
+epoch 9, step 237, batch 1400, 12.00 % (7000/58317), loss -131.92971801757812
+epoch 9, step 238, batch 1400, 14.40 % (8400/58317), loss -129.89117431640625
+epoch 9, step 239, batch 1400, 16.80 % (9800/58317), loss -132.2219696044922
+epoch 9, step 240, batch 1400, 19.21 % (11200/58317), loss -136.93661499023438
+epoch 9, step 241, batch 1400, 21.61 % (12600/58317), loss -137.77908325195312
+epoch 9, step 242, batch 1400, 24.01 % (14000/58317), loss -128.7278289794922
+epoch 9, step 243, batch 1400, 26.41 % (15400/58317), loss -130.20596313476562
+epoch 9, step 244, batch 1400, 28.81 % (16800/58317), loss -137.64657592773438
+epoch 9, step 245, batch 1400, 31.21 % (18200/58317), loss -121.54949951171875
+epoch 9, step 246, batch 1400, 33.61 % (19600/58317), loss -133.8519744873047
+epoch 9, step 247, batch 1400, 36.01 % (21000/58317), loss -131.0758819580078
+epoch 9, step 248, batch 1400, 38.41 % (22400/58317), loss -136.76309204101562
+epoch 9, step 249, batch 1400, 40.81 % (23800/58317), loss -122.22047424316406
+epoch 9, step 250, batch 1400, 43.21 % (25200/58317), loss -128.6481170654297
+epoch 9, step 251, batch 1400, 45.61 % (26600/58317), loss -132.32852172851562
+epoch 9, step 252, batch 1400, 48.01 % (28000/58317), loss -130.82769775390625
+epoch 9, step 253, batch 1400, 50.41 % (29400/58317), loss -130.3773956298828
+epoch 9, step 254, batch 1400, 52.81 % (30800/58317), loss -129.05767822265625
+epoch 9, step 255, batch 1400, 55.22 % (32200/58317), loss -132.60157775878906
+epoch 9, step 256, batch 1400, 57.62 % (33600/58317), loss -135.64385986328125
+epoch 9, step 257, batch 1400, 60.02 % (35000/58317), loss -124.53995513916016
+epoch 9, step 258, batch 1400, 62.42 % (36400/58317), loss -132.146728515625
+epoch 9, step 259, batch 1400, 64.82 % (37800/58317), loss -128.18382263183594
+epoch 9, step 260, batch 1400, 67.22 % (39200/58317), loss -129.3053436279297
+epoch 9, step 261, batch 1400, 69.62 % (40600/58317), loss -131.38720703125
+Finished training in 13.41170334815979s
+Starting validation
+Validating
+Finished validation in 3.665642261505127s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 10, step 262, batch 1400, 2.40 % (1400/58317), loss -127.09217071533203
+epoch 10, step 263, batch 1400, 4.80 % (2800/58317), loss -133.01939392089844
+epoch 10, step 264, batch 1400, 7.20 % (4200/58317), loss -128.2048797607422
+epoch 10, step 265, batch 1400, 9.60 % (5600/58317), loss -129.9109649658203
+epoch 10, step 266, batch 1400, 12.00 % (7000/58317), loss -126.21533203125
+epoch 10, step 267, batch 1400, 14.40 % (8400/58317), loss -133.9069061279297
+epoch 10, step 268, batch 1400, 16.80 % (9800/58317), loss -130.77667236328125
+epoch 10, step 269, batch 1400, 19.21 % (11200/58317), loss -132.57498168945312
+epoch 10, step 270, batch 1400, 21.61 % (12600/58317), loss -131.29627990722656
+epoch 10, step 271, batch 1400, 24.01 % (14000/58317), loss -137.245849609375
+epoch 10, step 272, batch 1400, 26.41 % (15400/58317), loss -126.0540542602539
+epoch 10, step 273, batch 1400, 28.81 % (16800/58317), loss -131.46139526367188
+epoch 10, step 274, batch 1400, 31.21 % (18200/58317), loss -129.63314819335938
+epoch 10, step 275, batch 1400, 33.61 % (19600/58317), loss -132.61038208007812
+epoch 10, step 276, batch 1400, 36.01 % (21000/58317), loss -128.65673828125
+epoch 10, step 277, batch 1400, 38.41 % (22400/58317), loss -131.595947265625
+epoch 10, step 278, batch 1400, 40.81 % (23800/58317), loss -132.91905212402344
+epoch 10, step 279, batch 1400, 43.21 % (25200/58317), loss -127.58334350585938
+epoch 10, step 280, batch 1400, 45.61 % (26600/58317), loss -134.23329162597656
+epoch 10, step 281, batch 1400, 48.01 % (28000/58317), loss -136.73097229003906
+epoch 10, step 282, batch 1400, 50.41 % (29400/58317), loss -126.84652709960938
+epoch 10, step 283, batch 1400, 52.81 % (30800/58317), loss -129.29608154296875
+epoch 10, step 284, batch 1400, 55.22 % (32200/58317), loss -134.94544982910156
+epoch 10, step 285, batch 1400, 57.62 % (33600/58317), loss -140.415771484375
+epoch 10, step 286, batch 1400, 60.02 % (35000/58317), loss -126.41128540039062
+epoch 10, step 287, batch 1400, 62.42 % (36400/58317), loss -135.34329223632812
+epoch 10, step 288, batch 1400, 64.82 % (37800/58317), loss -128.2766571044922
+epoch 10, step 289, batch 1400, 67.22 % (39200/58317), loss -139.5181427001953
+epoch 10, step 290, batch 1400, 69.62 % (40600/58317), loss -127.6168441772461
+Finished training in 13.6146399974823s
+Starting validation
+Validating
+Finished validation in 4.804786682128906s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 11, step 291, batch 1400, 2.40 % (1400/58317), loss -136.46177673339844
+epoch 11, step 292, batch 1400, 4.80 % (2800/58317), loss -127.47242736816406
+epoch 11, step 293, batch 1400, 7.20 % (4200/58317), loss -129.72703552246094
+epoch 11, step 294, batch 1400, 9.60 % (5600/58317), loss -136.63734436035156
+epoch 11, step 295, batch 1400, 12.00 % (7000/58317), loss -129.3225860595703
+epoch 11, step 296, batch 1400, 14.40 % (8400/58317), loss -136.76129150390625
+epoch 11, step 297, batch 1400, 16.80 % (9800/58317), loss -132.2111358642578
+epoch 11, step 298, batch 1400, 19.21 % (11200/58317), loss -136.03550720214844
+epoch 11, step 299, batch 1400, 21.61 % (12600/58317), loss -130.46771240234375
+epoch 11, step 300, batch 1400, 24.01 % (14000/58317), loss -132.20504760742188
+epoch 11, step 301, batch 1400, 26.41 % (15400/58317), loss -131.1857147216797
+epoch 11, step 302, batch 1400, 28.81 % (16800/58317), loss -129.6245574951172
+epoch 11, step 303, batch 1400, 31.21 % (18200/58317), loss -138.22462463378906
+epoch 11, step 304, batch 1400, 33.61 % (19600/58317), loss -132.9332275390625
+epoch 11, step 305, batch 1400, 36.01 % (21000/58317), loss -132.93190002441406
+epoch 11, step 306, batch 1400, 38.41 % (22400/58317), loss -135.05209350585938
+epoch 11, step 307, batch 1400, 40.81 % (23800/58317), loss -133.36749267578125
+epoch 11, step 308, batch 1400, 43.21 % (25200/58317), loss -126.20305633544922
+epoch 11, step 309, batch 1400, 45.61 % (26600/58317), loss -134.80723571777344
+epoch 11, step 310, batch 1400, 48.01 % (28000/58317), loss -133.41017150878906
+epoch 11, step 311, batch 1400, 50.41 % (29400/58317), loss -134.73617553710938
+epoch 11, step 312, batch 1400, 52.81 % (30800/58317), loss -137.81185913085938
+epoch 11, step 313, batch 1400, 55.22 % (32200/58317), loss -131.90121459960938
+epoch 11, step 314, batch 1400, 57.62 % (33600/58317), loss -125.40316009521484
+epoch 11, step 315, batch 1400, 60.02 % (35000/58317), loss -134.28720092773438
+epoch 11, step 316, batch 1400, 62.42 % (36400/58317), loss -139.97219848632812
+epoch 11, step 317, batch 1400, 64.82 % (37800/58317), loss -135.2103271484375
+epoch 11, step 318, batch 1400, 67.22 % (39200/58317), loss -136.15733337402344
+epoch 11, step 319, batch 1400, 69.62 % (40600/58317), loss -139.68849182128906
+Finished training in 13.576254606246948s
+Starting validation
+Validating
+Finished validation in 4.827035188674927s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 12, step 320, batch 1400, 2.40 % (1400/58317), loss -140.45159912109375
+epoch 12, step 321, batch 1400, 4.80 % (2800/58317), loss -138.79368591308594
+epoch 12, step 322, batch 1400, 7.20 % (4200/58317), loss -131.3800811767578
+epoch 12, step 323, batch 1400, 9.60 % (5600/58317), loss -133.6109161376953
+epoch 12, step 324, batch 1400, 12.00 % (7000/58317), loss -140.6884002685547
+epoch 12, step 325, batch 1400, 14.40 % (8400/58317), loss -143.2180633544922
+epoch 12, step 326, batch 1400, 16.80 % (9800/58317), loss -137.08319091796875
+epoch 12, step 327, batch 1400, 19.21 % (11200/58317), loss -145.8897705078125
+epoch 12, step 328, batch 1400, 21.61 % (12600/58317), loss -133.17147827148438
+epoch 12, step 329, batch 1400, 24.01 % (14000/58317), loss -138.83172607421875
+epoch 12, step 330, batch 1400, 26.41 % (15400/58317), loss -132.58786010742188
+epoch 12, step 331, batch 1400, 28.81 % (16800/58317), loss -140.4407501220703
+epoch 12, step 332, batch 1400, 31.21 % (18200/58317), loss -133.3867950439453
+epoch 12, step 333, batch 1400, 33.61 % (19600/58317), loss -135.87722778320312
+epoch 12, step 334, batch 1400, 36.01 % (21000/58317), loss -134.08216857910156
+epoch 12, step 335, batch 1400, 38.41 % (22400/58317), loss -139.60748291015625
+epoch 12, step 336, batch 1400, 40.81 % (23800/58317), loss -135.01580810546875
+epoch 12, step 337, batch 1400, 43.21 % (25200/58317), loss -140.18679809570312
+epoch 12, step 338, batch 1400, 45.61 % (26600/58317), loss -134.5579376220703
+epoch 12, step 339, batch 1400, 48.01 % (28000/58317), loss -142.1113739013672
+epoch 12, step 340, batch 1400, 50.41 % (29400/58317), loss -129.95484924316406
+epoch 12, step 341, batch 1400, 52.81 % (30800/58317), loss -131.3011474609375
+epoch 12, step 342, batch 1400, 55.22 % (32200/58317), loss -141.60394287109375
+epoch 12, step 343, batch 1400, 57.62 % (33600/58317), loss -135.75265502929688
+epoch 12, step 344, batch 1400, 60.02 % (35000/58317), loss -137.92857360839844
+epoch 12, step 345, batch 1400, 62.42 % (36400/58317), loss -139.33551025390625
+epoch 12, step 346, batch 1400, 64.82 % (37800/58317), loss -140.68667602539062
+epoch 12, step 347, batch 1400, 67.22 % (39200/58317), loss -136.0575714111328
+epoch 12, step 348, batch 1400, 69.62 % (40600/58317), loss -136.1076202392578
+Finished training in 13.548815488815308s
+Starting validation
+Validating
+Finished validation in 4.794539213180542s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 13, step 349, batch 1400, 2.40 % (1400/58317), loss -144.7378387451172
+epoch 13, step 350, batch 1400, 4.80 % (2800/58317), loss -137.99365234375
+epoch 13, step 351, batch 1400, 7.20 % (4200/58317), loss -141.14773559570312
+epoch 13, step 352, batch 1400, 9.60 % (5600/58317), loss -144.5172576904297
+epoch 13, step 353, batch 1400, 12.00 % (7000/58317), loss -129.5498504638672
+epoch 13, step 354, batch 1400, 14.40 % (8400/58317), loss -142.91122436523438
+epoch 13, step 355, batch 1400, 16.80 % (9800/58317), loss -134.31007385253906
+epoch 13, step 356, batch 1400, 19.21 % (11200/58317), loss -143.7663116455078
+epoch 13, step 357, batch 1400, 21.61 % (12600/58317), loss -124.76383972167969
+epoch 13, step 358, batch 1400, 24.01 % (14000/58317), loss -130.20913696289062
+epoch 13, step 359, batch 1400, 26.41 % (15400/58317), loss -134.5290069580078
+epoch 13, step 360, batch 1400, 28.81 % (16800/58317), loss -133.50302124023438
+epoch 13, step 361, batch 1400, 31.21 % (18200/58317), loss -134.58837890625
+epoch 13, step 362, batch 1400, 33.61 % (19600/58317), loss -136.3360137939453
+epoch 13, step 363, batch 1400, 36.01 % (21000/58317), loss -138.8862762451172
+epoch 13, step 364, batch 1400, 38.41 % (22400/58317), loss -135.4827880859375
+epoch 13, step 365, batch 1400, 40.81 % (23800/58317), loss -142.01104736328125
+epoch 13, step 366, batch 1400, 43.21 % (25200/58317), loss -134.21209716796875
+epoch 13, step 367, batch 1400, 45.61 % (26600/58317), loss -136.4556884765625
+epoch 13, step 368, batch 1400, 48.01 % (28000/58317), loss -132.77537536621094
+epoch 13, step 369, batch 1400, 50.41 % (29400/58317), loss -132.26556396484375
+epoch 13, step 370, batch 1400, 52.81 % (30800/58317), loss -134.23690795898438
+epoch 13, step 371, batch 1400, 55.22 % (32200/58317), loss -139.25796508789062
+epoch 13, step 372, batch 1400, 57.62 % (33600/58317), loss -135.7623748779297
+epoch 13, step 373, batch 1400, 60.02 % (35000/58317), loss -136.67820739746094
+epoch 13, step 374, batch 1400, 62.42 % (36400/58317), loss -137.78147888183594
+epoch 13, step 375, batch 1400, 64.82 % (37800/58317), loss -140.12338256835938
+epoch 13, step 376, batch 1400, 67.22 % (39200/58317), loss -136.39254760742188
+epoch 13, step 377, batch 1400, 69.62 % (40600/58317), loss -136.5314483642578
+Finished training in 13.496713876724243s
+Starting validation
+Validating
+Finished validation in 3.672468900680542s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 14, step 378, batch 1400, 2.40 % (1400/58317), loss -145.47854614257812
+epoch 14, step 379, batch 1400, 4.80 % (2800/58317), loss -134.08811950683594
+epoch 14, step 380, batch 1400, 7.20 % (4200/58317), loss -146.87197875976562
+epoch 14, step 381, batch 1400, 9.60 % (5600/58317), loss -125.98390197753906
+epoch 14, step 382, batch 1400, 12.00 % (7000/58317), loss -132.19256591796875
+epoch 14, step 383, batch 1400, 14.40 % (8400/58317), loss -128.12664794921875
+epoch 14, step 384, batch 1400, 16.80 % (9800/58317), loss -134.83197021484375
+epoch 14, step 385, batch 1400, 19.21 % (11200/58317), loss -133.56932067871094
+epoch 14, step 386, batch 1400, 21.61 % (12600/58317), loss -135.68165588378906
+epoch 14, step 387, batch 1400, 24.01 % (14000/58317), loss -134.68887329101562
+epoch 14, step 388, batch 1400, 26.41 % (15400/58317), loss -133.36878967285156
+epoch 14, step 389, batch 1400, 28.81 % (16800/58317), loss -141.7439422607422
+epoch 14, step 390, batch 1400, 31.21 % (18200/58317), loss -133.48141479492188
+epoch 14, step 391, batch 1400, 33.61 % (19600/58317), loss -140.3828125
+epoch 14, step 392, batch 1400, 36.01 % (21000/58317), loss -135.0845489501953
+epoch 14, step 393, batch 1400, 38.41 % (22400/58317), loss -140.91273498535156
+epoch 14, step 394, batch 1400, 40.81 % (23800/58317), loss -138.0616912841797
+epoch 14, step 395, batch 1400, 43.21 % (25200/58317), loss -142.84808349609375
+epoch 14, step 396, batch 1400, 45.61 % (26600/58317), loss -138.1981658935547
+epoch 14, step 397, batch 1400, 48.01 % (28000/58317), loss -137.11085510253906
+epoch 14, step 398, batch 1400, 50.41 % (29400/58317), loss -139.7779998779297
+epoch 14, step 399, batch 1400, 52.81 % (30800/58317), loss -140.7452850341797
+epoch 14, step 400, batch 1400, 55.22 % (32200/58317), loss -141.04559326171875
+epoch 14, step 401, batch 1400, 57.62 % (33600/58317), loss -140.65696716308594
+epoch 14, step 402, batch 1400, 60.02 % (35000/58317), loss -137.83934020996094
+epoch 14, step 403, batch 1400, 62.42 % (36400/58317), loss -148.67391967773438
+epoch 14, step 404, batch 1400, 64.82 % (37800/58317), loss -136.18923950195312
+epoch 14, step 405, batch 1400, 67.22 % (39200/58317), loss -142.84532165527344
+epoch 14, step 406, batch 1400, 69.62 % (40600/58317), loss -139.62477111816406
+Finished training in 13.525385856628418s
+Starting validation
+Validating
+Finished validation in 3.6473464965820312s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 15, step 407, batch 1400, 2.40 % (1400/58317), loss -139.2275390625
+epoch 15, step 408, batch 1400, 4.80 % (2800/58317), loss -141.9337158203125
+epoch 15, step 409, batch 1400, 7.20 % (4200/58317), loss -142.35488891601562
+epoch 15, step 410, batch 1400, 9.60 % (5600/58317), loss -141.3269805908203
+epoch 15, step 411, batch 1400, 12.00 % (7000/58317), loss -145.58416748046875
+epoch 15, step 412, batch 1400, 14.40 % (8400/58317), loss -137.73654174804688
+epoch 15, step 413, batch 1400, 16.80 % (9800/58317), loss -147.1748504638672
+epoch 15, step 414, batch 1400, 19.21 % (11200/58317), loss -132.2869110107422
+epoch 15, step 415, batch 1400, 21.61 % (12600/58317), loss -137.73199462890625
+epoch 15, step 416, batch 1400, 24.01 % (14000/58317), loss -143.68357849121094
+epoch 15, step 417, batch 1400, 26.41 % (15400/58317), loss -142.34605407714844
+epoch 15, step 418, batch 1400, 28.81 % (16800/58317), loss -138.63714599609375
+epoch 15, step 419, batch 1400, 31.21 % (18200/58317), loss -141.96475219726562
+epoch 15, step 420, batch 1400, 33.61 % (19600/58317), loss -143.0478515625
+epoch 15, step 421, batch 1400, 36.01 % (21000/58317), loss -145.62388610839844
+epoch 15, step 422, batch 1400, 38.41 % (22400/58317), loss -141.1923065185547
+epoch 15, step 423, batch 1400, 40.81 % (23800/58317), loss -142.89999389648438
+epoch 15, step 424, batch 1400, 43.21 % (25200/58317), loss -129.43707275390625
+epoch 15, step 425, batch 1400, 45.61 % (26600/58317), loss -148.40980529785156
+epoch 15, step 426, batch 1400, 48.01 % (28000/58317), loss -121.86766052246094
+epoch 15, step 427, batch 1400, 50.41 % (29400/58317), loss -129.21295166015625
+epoch 15, step 428, batch 1400, 52.81 % (30800/58317), loss -140.3522186279297
+epoch 15, step 429, batch 1400, 55.22 % (32200/58317), loss -137.67103576660156
+epoch 15, step 430, batch 1400, 57.62 % (33600/58317), loss -139.67745971679688
+epoch 15, step 431, batch 1400, 60.02 % (35000/58317), loss -141.36517333984375
+epoch 15, step 432, batch 1400, 62.42 % (36400/58317), loss -144.08065795898438
+epoch 15, step 433, batch 1400, 64.82 % (37800/58317), loss -139.9558868408203
+epoch 15, step 434, batch 1400, 67.22 % (39200/58317), loss -144.42955017089844
+epoch 15, step 435, batch 1400, 69.62 % (40600/58317), loss -135.6351776123047
+Finished training in 13.469330787658691s
+Starting validation
+Validating
+Finished validation in 3.6989567279815674s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 16, step 436, batch 1400, 2.40 % (1400/58317), loss -131.83982849121094
+epoch 16, step 437, batch 1400, 4.80 % (2800/58317), loss -150.771728515625
+epoch 16, step 438, batch 1400, 7.20 % (4200/58317), loss -138.6881103515625
+epoch 16, step 439, batch 1400, 9.60 % (5600/58317), loss -136.713623046875
+epoch 16, step 440, batch 1400, 12.00 % (7000/58317), loss -144.03150939941406
+epoch 16, step 441, batch 1400, 14.40 % (8400/58317), loss -138.35231018066406
+epoch 16, step 442, batch 1400, 16.80 % (9800/58317), loss -137.37510681152344
+epoch 16, step 443, batch 1400, 19.21 % (11200/58317), loss -138.4507598876953
+epoch 16, step 444, batch 1400, 21.61 % (12600/58317), loss -145.62319946289062
+epoch 16, step 445, batch 1400, 24.01 % (14000/58317), loss -142.97547912597656
+epoch 16, step 446, batch 1400, 26.41 % (15400/58317), loss -142.60935974121094
+epoch 16, step 447, batch 1400, 28.81 % (16800/58317), loss -142.98403930664062
+epoch 16, step 448, batch 1400, 31.21 % (18200/58317), loss -145.26220703125
+epoch 16, step 449, batch 1400, 33.61 % (19600/58317), loss -148.77488708496094
+epoch 16, step 450, batch 1400, 36.01 % (21000/58317), loss -141.03668212890625
+epoch 16, step 451, batch 1400, 38.41 % (22400/58317), loss -144.6849365234375
+epoch 16, step 452, batch 1400, 40.81 % (23800/58317), loss -146.3125
+epoch 16, step 453, batch 1400, 43.21 % (25200/58317), loss -149.12185668945312
+epoch 16, step 454, batch 1400, 45.61 % (26600/58317), loss -147.33444213867188
+epoch 16, step 455, batch 1400, 48.01 % (28000/58317), loss -141.6705780029297
+epoch 16, step 456, batch 1400, 50.41 % (29400/58317), loss -147.197998046875
+epoch 16, step 457, batch 1400, 52.81 % (30800/58317), loss -147.89291381835938
+epoch 16, step 458, batch 1400, 55.22 % (32200/58317), loss -147.13650512695312
+epoch 16, step 459, batch 1400, 57.62 % (33600/58317), loss -150.55445861816406
+epoch 16, step 460, batch 1400, 60.02 % (35000/58317), loss -145.5886688232422
+epoch 16, step 461, batch 1400, 62.42 % (36400/58317), loss -151.96078491210938
+epoch 16, step 462, batch 1400, 64.82 % (37800/58317), loss -143.4835968017578
+epoch 16, step 463, batch 1400, 67.22 % (39200/58317), loss -147.04681396484375
+epoch 16, step 464, batch 1400, 69.62 % (40600/58317), loss -148.5471649169922
+Finished training in 13.471213340759277s
+Starting validation
+Validating
+Finished validation in 4.8866729736328125s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 17, step 465, batch 1400, 2.40 % (1400/58317), loss -143.97227478027344
+epoch 17, step 466, batch 1400, 4.80 % (2800/58317), loss -149.1529083251953
+epoch 17, step 467, batch 1400, 7.20 % (4200/58317), loss -146.20594787597656
+epoch 17, step 468, batch 1400, 9.60 % (5600/58317), loss -143.70103454589844
+epoch 17, step 469, batch 1400, 12.00 % (7000/58317), loss -149.77633666992188
+epoch 17, step 470, batch 1400, 14.40 % (8400/58317), loss -147.1844024658203
+epoch 17, step 471, batch 1400, 16.80 % (9800/58317), loss -151.12228393554688
+epoch 17, step 472, batch 1400, 19.21 % (11200/58317), loss -143.174072265625
+epoch 17, step 473, batch 1400, 21.61 % (12600/58317), loss -152.87896728515625
+epoch 17, step 474, batch 1400, 24.01 % (14000/58317), loss -138.00863647460938
+epoch 17, step 475, batch 1400, 26.41 % (15400/58317), loss -155.473876953125
+epoch 17, step 476, batch 1400, 28.81 % (16800/58317), loss -113.08114624023438
+epoch 17, step 477, batch 1400, 31.21 % (18200/58317), loss -129.6146697998047
+epoch 17, step 478, batch 1400, 33.61 % (19600/58317), loss -140.47190856933594
+epoch 17, step 479, batch 1400, 36.01 % (21000/58317), loss -137.36489868164062
+epoch 17, step 480, batch 1400, 38.41 % (22400/58317), loss -142.8307647705078
+epoch 17, step 481, batch 1400, 40.81 % (23800/58317), loss -139.12669372558594
+epoch 17, step 482, batch 1400, 43.21 % (25200/58317), loss -142.802978515625
+epoch 17, step 483, batch 1400, 45.61 % (26600/58317), loss -142.38568115234375
+epoch 17, step 484, batch 1400, 48.01 % (28000/58317), loss -141.96951293945312
+epoch 17, step 485, batch 1400, 50.41 % (29400/58317), loss -152.87420654296875
+epoch 17, step 486, batch 1400, 52.81 % (30800/58317), loss -128.61087036132812
+epoch 17, step 487, batch 1400, 55.22 % (32200/58317), loss -129.72927856445312
+epoch 17, step 488, batch 1400, 57.62 % (33600/58317), loss -142.27426147460938
+epoch 17, step 489, batch 1400, 60.02 % (35000/58317), loss -142.33180236816406
+epoch 17, step 490, batch 1400, 62.42 % (36400/58317), loss -144.28909301757812
+epoch 17, step 491, batch 1400, 64.82 % (37800/58317), loss -142.72828674316406
+epoch 17, step 492, batch 1400, 67.22 % (39200/58317), loss -138.38571166992188
+epoch 17, step 493, batch 1400, 69.62 % (40600/58317), loss -142.08042907714844
+Finished training in 13.599583625793457s
+Starting validation
+Validating
+Finished validation in 3.718153476715088s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 18, step 494, batch 1400, 2.40 % (1400/58317), loss -143.48924255371094
+epoch 18, step 495, batch 1400, 4.80 % (2800/58317), loss -139.6177215576172
+epoch 18, step 496, batch 1400, 7.20 % (4200/58317), loss -147.9750213623047
+epoch 18, step 497, batch 1400, 9.60 % (5600/58317), loss -141.55239868164062
+epoch 18, step 498, batch 1400, 12.00 % (7000/58317), loss -146.0263671875
+epoch 18, step 499, batch 1400, 14.40 % (8400/58317), loss -145.12896728515625
+epoch 18, step 500, batch 1400, 16.80 % (9800/58317), loss -146.21925354003906
+epoch 18, step 501, batch 1400, 19.21 % (11200/58317), loss -149.9289093017578
+epoch 18, step 502, batch 1400, 21.61 % (12600/58317), loss -135.81121826171875
+epoch 18, step 503, batch 1400, 24.01 % (14000/58317), loss -147.36419677734375
+epoch 18, step 504, batch 1400, 26.41 % (15400/58317), loss -134.30404663085938
+epoch 18, step 505, batch 1400, 28.81 % (16800/58317), loss -139.80052185058594
+epoch 18, step 506, batch 1400, 31.21 % (18200/58317), loss -141.35452270507812
+epoch 18, step 507, batch 1400, 33.61 % (19600/58317), loss -140.7838897705078
+epoch 18, step 508, batch 1400, 36.01 % (21000/58317), loss -143.74073791503906
+epoch 18, step 509, batch 1400, 38.41 % (22400/58317), loss -140.27410888671875
+epoch 18, step 510, batch 1400, 40.81 % (23800/58317), loss -141.3290252685547
+epoch 18, step 511, batch 1400, 43.21 % (25200/58317), loss -145.28289794921875
+epoch 18, step 512, batch 1400, 45.61 % (26600/58317), loss -141.6535186767578
+epoch 18, step 513, batch 1400, 48.01 % (28000/58317), loss -147.1132354736328
+epoch 18, step 514, batch 1400, 50.41 % (29400/58317), loss -144.6140899658203
+epoch 18, step 515, batch 1400, 52.81 % (30800/58317), loss -146.66322326660156
+epoch 18, step 516, batch 1400, 55.22 % (32200/58317), loss -148.22154235839844
+epoch 18, step 517, batch 1400, 57.62 % (33600/58317), loss -151.7237548828125
+epoch 18, step 518, batch 1400, 60.02 % (35000/58317), loss -145.60128784179688
+epoch 18, step 519, batch 1400, 62.42 % (36400/58317), loss -152.55117797851562
+epoch 18, step 520, batch 1400, 64.82 % (37800/58317), loss -129.0946502685547
+epoch 18, step 521, batch 1400, 67.22 % (39200/58317), loss -149.83413696289062
+epoch 18, step 522, batch 1400, 69.62 % (40600/58317), loss -124.96186828613281
+Finished training in 13.44001030921936s
+Starting validation
+Validating
+Finished validation in 3.7233402729034424s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 19, step 523, batch 1400, 2.40 % (1400/58317), loss -133.05743408203125
+epoch 19, step 524, batch 1400, 4.80 % (2800/58317), loss -137.19906616210938
+epoch 19, step 525, batch 1400, 7.20 % (4200/58317), loss -140.4467315673828
+epoch 19, step 526, batch 1400, 9.60 % (5600/58317), loss -136.53688049316406
+epoch 19, step 527, batch 1400, 12.00 % (7000/58317), loss -139.1594696044922
+epoch 19, step 528, batch 1400, 14.40 % (8400/58317), loss -142.76593017578125
+epoch 19, step 529, batch 1400, 16.80 % (9800/58317), loss -142.4547119140625
+epoch 19, step 530, batch 1400, 19.21 % (11200/58317), loss -143.3528594970703
+epoch 19, step 531, batch 1400, 21.61 % (12600/58317), loss -143.81130981445312
+epoch 19, step 532, batch 1400, 24.01 % (14000/58317), loss -134.5847930908203
+epoch 19, step 533, batch 1400, 26.41 % (15400/58317), loss -140.81936645507812
+epoch 19, step 534, batch 1400, 28.81 % (16800/58317), loss -146.4465789794922
+epoch 19, step 535, batch 1400, 31.21 % (18200/58317), loss -144.34402465820312
+epoch 19, step 536, batch 1400, 33.61 % (19600/58317), loss -140.96217346191406
+epoch 19, step 537, batch 1400, 36.01 % (21000/58317), loss -147.5723419189453
+epoch 19, step 538, batch 1400, 38.41 % (22400/58317), loss -143.6511688232422
+epoch 19, step 539, batch 1400, 40.81 % (23800/58317), loss -151.6016387939453
+epoch 19, step 540, batch 1400, 43.21 % (25200/58317), loss -125.32099914550781
+epoch 19, step 541, batch 1400, 45.61 % (26600/58317), loss -140.3597412109375
+epoch 19, step 542, batch 1400, 48.01 % (28000/58317), loss -137.5388946533203
+epoch 19, step 543, batch 1400, 50.41 % (29400/58317), loss -135.34457397460938
+epoch 19, step 544, batch 1400, 52.81 % (30800/58317), loss -147.15916442871094
+epoch 19, step 545, batch 1400, 55.22 % (32200/58317), loss -137.44020080566406
+epoch 19, step 546, batch 1400, 57.62 % (33600/58317), loss -139.73336791992188
+epoch 19, step 547, batch 1400, 60.02 % (35000/58317), loss -142.05003356933594
+epoch 19, step 548, batch 1400, 62.42 % (36400/58317), loss -144.73760986328125
+epoch 19, step 549, batch 1400, 64.82 % (37800/58317), loss -142.11334228515625
+epoch 19, step 550, batch 1400, 67.22 % (39200/58317), loss -151.04788208007812
+epoch 19, step 551, batch 1400, 69.62 % (40600/58317), loss -126.46174621582031
+Finished training in 13.515443563461304s
+Starting validation
+Validating
+Finished validation in 3.6621484756469727s
+Saving model and state to model
+Starting training
+checkpoint dir: /app/OmniAnomaly/model
+epoch 20, step 552, batch 1400, 2.40 % (1400/58317), loss -134.40528869628906
+epoch 20, step 553, batch 1400, 4.80 % (2800/58317), loss -147.29156494140625
+epoch 20, step 554, batch 1400, 7.20 % (4200/58317), loss -141.5214385986328
+epoch 20, step 555, batch 1400, 9.60 % (5600/58317), loss -145.037109375
+epoch 20, step 556, batch 1400, 12.00 % (7000/58317), loss -145.32440185546875
+epoch 20, step 557, batch 1400, 14.40 % (8400/58317), loss -146.44110107421875
+epoch 20, step 558, batch 1400, 16.80 % (9800/58317), loss -130.1426239013672
+epoch 20, step 559, batch 1400, 19.21 % (11200/58317), loss -148.66094970703125
+epoch 20, step 560, batch 1400, 21.61 % (12600/58317), loss -116.74297332763672
+epoch 20, step 561, batch 1400, 24.01 % (14000/58317), loss -131.82931518554688
+epoch 20, step 562, batch 1400, 26.41 % (15400/58317), loss -132.42225646972656
+epoch 20, step 563, batch 1400, 28.81 % (16800/58317), loss -137.0280303955078
+epoch 20, step 564, batch 1400, 31.21 % (18200/58317), loss -136.4925994873047
+epoch 20, step 565, batch 1400, 33.61 % (19600/58317), loss -137.30882263183594
+epoch 20, step 566, batch 1400, 36.01 % (21000/58317), loss -139.6262664794922
+epoch 20, step 567, batch 1400, 38.41 % (22400/58317), loss -142.3743133544922
+epoch 20, step 568, batch 1400, 40.81 % (23800/58317), loss -144.9302978515625
+epoch 20, step 569, batch 1400, 43.21 % (25200/58317), loss -140.6935577392578
+epoch 20, step 570, batch 1400, 45.61 % (26600/58317), loss -143.362548828125
+epoch 20, step 571, batch 1400, 48.01 % (28000/58317), loss -144.05966186523438
+epoch 20, step 572, batch 1400, 50.41 % (29400/58317), loss -147.64076232910156
+epoch 20, step 573, batch 1400, 52.81 % (30800/58317), loss -147.3343048095703
+epoch 20, step 574, batch 1400, 55.22 % (32200/58317), loss -147.8656005859375
+epoch 20, step 575, batch 1400, 57.62 % (33600/58317), loss -145.6402587890625
+epoch 20, step 576, batch 1400, 60.02 % (35000/58317), loss -141.90846252441406
+epoch 20, step 577, batch 1400, 62.42 % (36400/58317), loss -151.8546142578125
+epoch 20, step 578, batch 1400, 64.82 % (37800/58317), loss -142.738037109375
+epoch 20, step 579, batch 1400, 67.22 % (39200/58317), loss -148.54931640625
+epoch 20, step 580, batch 1400, 69.62 % (40600/58317), loss -140.5749969482422
+Finished training in 13.475318193435669s
+Starting validation
+Validating
+Finished validation in 5.040539026260376s
+Saving model and state to model
+INFO:tensorflow:Restoring parameters from /app/OmniAnomaly/model/variables.dat
+2024-04-05 03:22:16,187 [INFO] tensorflow: Restoring parameters from /app/OmniAnomaly/model/variables.dat
+------------------------------ testing ------------------------------
+Finding best f1-score by searching for threshold..
+Initial threshold : 1.135704
+Number of peaks : 582
+Grimshaw maximum log-likelihood estimation ... [done]
+	γ = 0
+	σ = 682.00464
+	L = 4379.571219366141
+Extreme quantile (probability = 0.001): 1571.2985217406895
+  0%|          | 0/73630 [00:00<?, ?it/s]100%|██████████| 73630/73630 [00:00<00:00, 2364657.27it/s]
+972
+73630
+POT result:  (0.8825413425714098, 0.8961900969069427, 0.869302086015967, 6751, 65082, 782, 1015, 0.9287145678470459) -1.4129295821557846 69.57665547440202
+==============================result==============================
+{'best_valid_loss': -150.1579856495387,
+ 'bf_FN': 1015,
+ 'bf_FP': 699,
+ 'bf_ROC/AUC': 0.929344654085355,
+ 'bf_TN': 65165,
+ 'bf_TP': 6751,
+ 'bf_f1': 0.8873554153522607,
+ 'bf_latency': 69.57665547440202,
+ 'bf_precision': 0.9061744966442953,
+ 'bf_recall': 0.869302086015967,
+ 'bf_threshold': -3.0,
+ 'pot-FN': 1015,
+ 'pot-FP': 782,
+ 'pot-TN': 65082,
+ 'pot-TP': 6751,
+ 'pot-f1': 0.8825413425714098,
+ 'pot-latency': 69.57665547440202,
+ 'pot-precision': 0.8961900969069427,
+ 'pot-recall': 0.869302086015967,
+ 'pot-threshold': -1.4129295821557846,
+ 'pred_time': 0.2334425449371338,
+ 'pred_total_time': 12.880471229553223,
+ 'train_time': 21.061898255348204,
+ 'valid_time': 0.2815526192004864}

@@ -13,7 +13,7 @@ WORKDIR /usr/local/bin
 RUN rm /usr/local/bin/python
 RUN ln -s /usr/bin/python3 python
 RUN pip3 install --upgrade pip
-RUN apt-get install -y git curl zip unzip
+RUN apt-get install -y git curl zip unzip tmux
 
 # Create /app directory
 WORKDIR /app
