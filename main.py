@@ -20,6 +20,20 @@ from omni_anomaly.prediction import Predictor
 from omni_anomaly.training import Trainer
 from omni_anomaly.utils import get_data_dim, get_data, save_z
 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+  # Restrict TensorFlow to only use the first GPU
+  # Currently, memory growth needs to be the same across GPUs
+  try:
+    for gpu in gpus:
+        tf.config.experimental.set_memory_growth(gpu, True)
+    tf.config.experimental.set_visible_devices(gpus[0], 'GPU')
+    logical_gpus = tf.config.experimental.list_logical_devices('GPU')
+    print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPU")
+    print('Success modifying GPU availability')
+  except RuntimeError as e:
+    # Visible devices must be set before GPUs have been initialized
+    print(e)
 
 class ExpConfig(Config):
     # dataset configuration

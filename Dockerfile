@@ -1,5 +1,5 @@
 # Base image
-FROM tensorflow/tensorflow:1.15.0-gpu
+FROM nvcr.io/nvidia/tensorflow:23.03-tf1-py3
 
 # Resolves error with key
 # See: https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
@@ -8,11 +8,18 @@ RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/
 
 # Update image contents to have latest python3 and pip3 for image
 RUN apt-get update
-RUN apt-get install -y python3-pip python3-dev vim
+#RUN apt install -y --no-install-recommends python3-dev python-is-python3
+# python3-setuptools
+# python3-pip 
+RUN apt remove -y python3-pip
+RUN python3 -m pip uninstall -y pip 
+#RUN python -m easy_install pip
+
+#RUN python3 -m pip install --upgrade pip
 WORKDIR /usr/local/bin
-RUN rm /usr/local/bin/python
 RUN ln -s /usr/bin/python3 python
-RUN pip3 install --upgrade pip
+#RUN pip3 install --upgrade pip
+#RUN apt install -y python3-pip --reinstall
 RUN apt-get install -y git curl zip unzip tmux
 
 # Create /app directory
@@ -21,7 +28,7 @@ WORKDIR /app
 # Copy OmniAnomaly requirements into image
 COPY ./requirements.txt /app
 
-# Install OmniAnomaly requirements 
+# Install OmniAnomaly requirements
 RUN pip3 install -r requirements.txt
 
 # Set initial folder to be OmniAnomaly

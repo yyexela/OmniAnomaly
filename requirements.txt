@@ -10,5 +10,6 @@ tqdm == 4.28.1
 imageio == 2.4.1
 fs == 2.3.0
 click == 7.0
+nvidia-pyindex
 git+https://github.com/yyexela/tfsnippet-tf-compat.git@v1
 git+https://github.com/yyexela/zhusuan-tf-compat.git@v1
