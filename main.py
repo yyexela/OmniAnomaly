@@ -20,7 +20,6 @@ from omni_anomaly.prediction import Predictor
 from omni_anomaly.training import Trainer
 from omni_anomaly.utils import get_data_dim, get_data, save_z
 
-
 class ExpConfig(Config):
     # dataset configuration
     dataset = "machine-1-1"
@@ -183,14 +182,16 @@ def main():
                         train_score = np.sum(train_score, axis=-1)
 
                     # get best f1
+                    start=np.mean(test_score)-np.std(test_score)*3
+                    end=np.mean(test_score)+np.std(test_score)*3
+                    step_num=200
                     bf_eval = bf_search(test_score, y_test[-len(test_score):],
-                                      start=config.bf_search_min,
-                                      end=config.bf_search_max,
-                                      step_num=int(abs(config.bf_search_max - config.bf_search_min) /
-                                                   config.bf_search_step_size),
+                                      start=start,
+                                      end=end,
+                                      step_num=step_num,
                                       verbose=False)
                     # get pot results
-                    pot_result = pot_eval(train_score, test_score, y_test[-len(test_score):], level=config.level)
+                    pot_result, _, _ = pot_eval(train_score, test_score, y_test[-len(test_score):], level=config.level)
 
                     # output the results
                     best_valid_metrics.update(bf_eval)

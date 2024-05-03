@@ -75,6 +75,7 @@ def adjust_predicts(score, label,
             anomaly_state = False
         if anomaly_state:
             predict[i] = True
+
     if calc_latency:
         if return_original_pred:
             return predict, latency / (anomaly_count + 1e-4), predict_og
@@ -94,25 +95,20 @@ def calc_seq(score, label, threshold):
     predict, latency = adjust_predicts(score, label, threshold, calc_latency=True)
     return calc_point2point(predict, label), latency
 
-def bf_search(score, label, start, end=None, step_num=1, display_freq=1, verbose=True):
+def bf_search(score, label, start, end, step_num, display_freq=1, verbose=True):
     """
     Find the best-f1 score by searching best `threshold` in [`start`, `end`).
     Method from MTAD-GAT (https://github.com/ML4ITS/mtad-gat-pytorch)
     """
 
-    print(f"Finding best f1-score by searching for threshold..")
-    if step_num is None or end is None:
-        end = start
-        step_num = 1
-    search_step, search_range, search_lower_bound = step_num, end - start, start
     if verbose:
-        print("search range: ", search_lower_bound, search_lower_bound + search_range)
-    threshold = search_lower_bound
+        print(f"Finding best f1-score by searching for threshold..")
+        print(f"Search range [{start}, {end}], {step_num} steps")
+    thresholds = np.linspace(start, end, step_num)
     m = (-1.0, -1.0, -1.0)
     m_t = 0.0
     m_l = 0
-    for i in range(search_step):
-        threshold += search_range / float(search_step)
+    for i, threshold in enumerate(thresholds):
         target, latency = calc_seq(score, label, threshold)
         if target[0] > m[0]:
             m_t = threshold
@@ -134,7 +130,7 @@ def bf_search(score, label, start, end=None, step_num=1, display_freq=1, verbose
         "bf_latency": m_l,
     }
 
-def pot_eval(init_score, score, label, q=1e-3, level=0.02):
+def pot_eval(init_score, score, label, q=1e-5, level=0.98):
     """
     Run POT method on given score.
     Args:
@@ -151,22 +147,19 @@ def pot_eval(init_score, score, label, q=1e-3, level=0.02):
     """
     s = SPOT(q)  # SPOT object
     s.fit(init_score, score)  # data import
-    s.initialize(level=level, min_extrema=True)  # initialization step
+    s.initialize(level=level, min_extrema=True, verbose=False)  # initialization step
     ret = s.run(dynamic=False)  # run
-    print(len(ret['alarms']))
-    print(len(ret['thresholds']))
     pot_th = -np.mean(ret['thresholds'])
-    pred, p_latency = adjust_predicts(score, label, pot_th, calc_latency=True)
+    pred, p_latency, pred_og = adjust_predicts(score, label, pot_th, calc_latency=True, return_original_pred=True)
     p_t = calc_point2point(pred, label)
-    print('POT result: ', p_t, pot_th, p_latency)
     return {
-        'pot-f1': p_t[0],
-        'pot-precision': p_t[1],
-        'pot-recall': p_t[2],
-        'pot-TP': p_t[3],
-        'pot-TN': p_t[4],
-        'pot-FP': p_t[5],
-        'pot-FN': p_t[6],
-        'pot-threshold': pot_th,
-        'pot-latency': p_latency
-    }
+        'pot_f1': p_t[0],
+        'pot_precision': p_t[1],
+        'pot_recall': p_t[2],
+        'pot_TP': p_t[3],
+        'pot_TN': p_t[4],
+        'pot_FP': p_t[5],
+        'pot_FN': p_t[6],
+        'pot_ROC/AUC': p_t[7],
+        'pot_threshold': pot_th
+    }, pred_og, pred
